@@ -33,7 +33,6 @@ func main() {
 				Formato: auxFormato,
 				Canales: auxEntero,
 			})
-
 		case 2:
 			fmt.Println("Capture titulo: ")
 			fmt.Scan(&auxTitulo)
@@ -59,10 +58,9 @@ func main() {
 				Frames:  auxEntero,
 			})
 		case 4:
-			fmt.Println("Opción 3")
+			cW.Mostrar()
 		case 0:
 			fmt.Println("Adios")
-
 		default:
 			fmt.Println("Opción no existe")
 		}

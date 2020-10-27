@@ -7,6 +7,13 @@ import (
 type ContenidoWeb struct {
 	Multimedias []Multimedia
 }
+
+func (cW *ContenidoWeb) Mostrar() {
+	for _, m := range cW.Multimedias {
+		m.Mostrar()
+	}
+}
+
 type Multimedia interface {
 	Mostrar()
 }
@@ -27,16 +34,19 @@ type Video struct {
 }
 
 func (i *Imagen) Mostrar() {
+	fmt.Println("--Imagen--")
 	fmt.Println("Titulo: ", i.Titulo)
 	fmt.Println("Formato: ", i.Formato)
 	fmt.Println("Canales: ", i.Canales)
 }
 func (a *Audio) Mostrar() {
+	fmt.Println("--Audio--")
 	fmt.Println("Titulo: ", a.Titulo)
 	fmt.Println("Formato: ", a.Formato)
 	fmt.Println("Duración: ", a.Duracion)
 }
 func (v *Video) Mostrar() {
+	fmt.Println("--Video--")
 	fmt.Println("Titulo: ", v.Titulo)
 	fmt.Println("Formato: ", v.Formato)
 	fmt.Println("Frames: ", v.Frames)
